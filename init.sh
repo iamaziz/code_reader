@@ -47,6 +47,18 @@ git sparse-checkout set tutorials
 
 cd ..
 
+# clone "Requests" code
+git clone \
+  --depth 1  \
+  --filter=blob:none  \
+  --sparse \
+  https://github.com/psf/requests \
+;
+cd requests
+git sparse-checkout set requests
+
+cd ..
+
 # clone "Scikit-Learn" code
 git clone \
   --depth 1  \
@@ -56,3 +68,5 @@ git clone \
 ;
 cd scikit-learn
 git sparse-checkout set sklearn
+
+cd ..
