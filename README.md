@@ -1,12 +1,5 @@
----
-title: Code Reader
-emoji: 🌖
-colorFrom: blue
-colorTo: indigo
-sdk: streamlit
-sdk_version: 1.10.0
-app_file: app.py
-pinned: false
----
+# Code Reader
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+A Streamlit app for reading "Source Code" like reading a book. See the deployed [demo app here](https://iamaziz-code-reader-app-wg55xz.streamlitapp.com/).
+
+> WIP ...
