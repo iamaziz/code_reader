@@ -18,7 +18,7 @@ _init_source_code_clone()
 def header():
     title = """
     # _Code Reader_
-    **JSMTC**: _**J**ust **S**how **M**e **T**he **C**ode_
+    **JSTC**: _**J**ust **S**how **T**he **C**ode_
     <sup>_Read source code like reading a book_.</sup>
     """
     st.markdown(title, unsafe_allow_html=True)

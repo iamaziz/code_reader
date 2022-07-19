@@ -56,6 +56,7 @@ def main(URL, TARGET_DIR):
     if matched_files:
         for f in matched_files:
             render_file(f)
+        config(URL)
         st.stop()
 
     topics = sorted(set([n.split("/")[2] for n in files]))
