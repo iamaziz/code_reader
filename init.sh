@@ -70,3 +70,15 @@ cd scikit-learn
 git sparse-checkout set sklearn
 
 cd ..
+
+# clone "Transformers" code
+git clone \
+  --depth 1  \
+  --filter=blob:none  \
+  --sparse \
+  https://github.com/huggingface/transformers \
+;
+cd transformers
+git sparse-checkout set src/transformers examples
+
+cd ..
