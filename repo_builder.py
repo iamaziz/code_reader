@@ -64,6 +64,8 @@ def main(URL, TARGET_DIR, SPLIT_ON: int = 2):
     for tab, tab_name in zip(tabs, topics):
         tab_files = [f for f in files if f.split("/")[SPLIT_ON] == tab_name]
         with tab:
+            len_files = len(tab_files)
+            st.markdown(f">`{len_files} files`") if len_files > 1 else None
             for f in sorted(tab_files):
                 render_file(f)
 

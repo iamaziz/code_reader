@@ -45,6 +45,6 @@ if choice:
     if c.startswith("scikit"):
         main("https://github.com/scikit-learn/scikit-learn", "scikit-learn/sklearn")
     if c.startswith("requests"):
-        main("https://github.com/psf/requests", "requests")
+        main("https://github.com/psf/requests", "requests", SPLIT_ON=1)
     if c.startswith("transformers"):
-        main("https://github.com/huggingface/transformers", "transformers", SPLIT_ON=1)
+        main("https://github.com/huggingface/transformers", "transformers", 1)
