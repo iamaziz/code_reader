@@ -47,7 +47,7 @@ def _display_filtered_files(files):
             st.stop()
 
 
-def main(URL, TARGET_DIR):
+def main(URL, TARGET_DIR, SPLIT_ON: int = 2):
     files = scan_files(TARGET_DIR)
 
     st1, st2 = st.columns(2)
@@ -59,14 +59,13 @@ def main(URL, TARGET_DIR):
         config(URL)
         st.stop()
 
-    topics = sorted(set([n.split("/")[2] for n in files]))
+    topics = sorted(set([n.split("/")[SPLIT_ON] for n in files]))
     tabs = st.tabs(topics)
     for tab, tab_name in zip(tabs, topics):
-        for f in sorted(files):
-            file_topic = f.split("/")[2]
-            if file_topic == tab_name:
-                with tab:
-                    render_file(f)
+        tab_files = [f for f in files if f.split("/")[SPLIT_ON] == tab_name]
+        with tab:
+            for f in sorted(tab_files):
+                render_file(f)
 
     config(URL)
 
