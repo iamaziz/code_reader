@@ -24,7 +24,7 @@ def header():
     st.markdown(title, unsafe_allow_html=True)
 
 
-st1, st2 = st.columns(2, gap="large")
+st1, st2 = st.columns(2) #, gap="large")
 with st2:
     header()
 with st1:
