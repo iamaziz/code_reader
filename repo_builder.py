@@ -35,9 +35,29 @@ def render_file(f):
         st.code(code, language="python")
 
 
+def _display_filtered_files(files):
+    filter_ = st.text_input("search file names")
+    if filter_:
+        match = [f for f in files if filter_ in f]
+        if len(match) > 0:
+            st.markdown(f"> found {len(match)} files")
+            return match
+        else:
+            st.markdown(f"> no match.")
+            st.stop()
+
+
 def main(URL, TARGET_DIR):
-    config(URL)
     files = scan_files(TARGET_DIR)
+
+    st1, st2 = st.columns(2)
+    with st2:
+        matched_files = _display_filtered_files(files)  # if search_enabled else None
+    if matched_files:
+        for f in matched_files:
+            render_file(f)
+        st.stop()
+
     topics = sorted(set([n.split("/")[2] for n in files]))
     tabs = st.tabs(topics)
     for tab, tab_name in zip(tabs, topics):
@@ -46,6 +66,8 @@ def main(URL, TARGET_DIR):
             if file_topic == tab_name:
                 with tab:
                     render_file(f)
+
+    config(URL)
 
 
 if __name__ == "__main__":
