@@ -51,12 +51,14 @@ def main(URL, TARGET_DIR, SPLIT_ON: int = 2):
     files = scan_files(TARGET_DIR)
 
     st1, st2 = st.columns(2, gap="large")
+    with st1:
+        config(URL)
     with st2:
         matched_files = _display_filtered_files(files)  # if search_enabled else None
     if matched_files:
         for f in matched_files:
             render_file(f)
-        config(URL)
+        # config(URL)
         st.stop()
 
     topics = sorted(set([n.split("/")[SPLIT_ON] for n in files]))
@@ -68,8 +70,6 @@ def main(URL, TARGET_DIR, SPLIT_ON: int = 2):
             st.markdown(f">`{len_files} files`") if len_files > 1 else None
             for f in sorted(tab_files):
                 render_file(f)
-
-    config(URL)
 
 
 if __name__ == "__main__":
