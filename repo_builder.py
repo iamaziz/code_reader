@@ -50,7 +50,7 @@ def _display_filtered_files(files):
 def main(URL, TARGET_DIR, SPLIT_ON: int = 2):
     files = scan_files(TARGET_DIR)
 
-    st1, st2 = st.columns(2)
+    st1, st2 = st.columns(2, gap="large")
     with st2:
         matched_files = _display_filtered_files(files)  # if search_enabled else None
     if matched_files:
