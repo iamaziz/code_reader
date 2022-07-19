@@ -28,6 +28,7 @@ files = [f for f in files if not "__" in f and not "setup.py" in f]
 
 
 # -- display contents
+@st.cache
 def render_file(f):
     with open(f, "r") as f_:
         code = f_.read()
