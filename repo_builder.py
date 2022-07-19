@@ -4,7 +4,7 @@ import streamlit as st
 
 
 # -- config page
-def config():
+def config(URL):
     # st.set_page_config(layout='wide')
     hide_streamlit_style = """
 						<style>
@@ -12,21 +12,19 @@ def config():
 						footer {visibility: hidden;}
 						</style>
 						"""
-    title = """	
-	<sub>[source code](https://github.com/yunjey/pytorch-tutorial)</sub>
+    title = f"""
+	<sub>[source code](URL)</sub>
 	"""
     header = hide_streamlit_style + title
     st.markdown(header, unsafe_allow_html=True)
 
 
 # -- scan files
-execlude = ("__", "app")
-files = [
-    f
-    for f in glob("pytorch-tutorial/**/*.py", recursive=True)
-    if not f.startswith(execlude)
-]
-files = [f for f in files if not "__" in f and not "setup.py" in f]
+def scan_files(TARGET_DIR):
+    execlude = ("__", "app")
+    files = [f for f in glob(f"{TARGET_DIR}/**/*.py", recursive=True) if not f.startswith(execlude)]
+    files = [f for f in files if not "__" in f and not "setup.py" in f]
+    return files
 
 
 # -- display contents
@@ -37,8 +35,9 @@ def render_file(f):
         st.code(code, language="python")
 
 
-def main():
-    config()
+def main(URL, TARGET_DIR):
+    config(URL)
+    files = scan_files(TARGET_DIR)
     topics = sorted(set([n.split("/")[2] for n in files]))
     tabs = st.tabs(topics)
     for tab, tab_name in zip(tabs, topics):
@@ -50,5 +49,8 @@ def main():
 
 
 if __name__ == "__main__":
+    # repos params
+    URL = "https://github.com/scikit-learn/scikit-learn"
+    TARGET_DIR = "scikit-learn/sklearn"
 
-    main()
+    main(URL, TARGET_DIR)

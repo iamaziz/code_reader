@@ -24,30 +24,23 @@ def header():
     st.markdown(title, unsafe_allow_html=True)
 
 
-st1, st2 = st.columns(2) #, gap="large")
+st1, st2 = st.columns(2, gap="large")
 with st2:
     header()
 with st1:
     CHOICES = ["", "Algorithms (CS fundamentals)", "Keras", "PyTorch Tutorial", "Scikit Learn"]
     choice = st.selectbox(
-        "Show Source Code To Read", CHOICES
+        "Choose Repo To Read Source Code", CHOICES
     )
 if choice:
-    from app_keras import main as keras_app
-    from app_pytorch_tut import main as torch_app
-    from app_algorithms import main as algorithms_app
-    from app_sickit import main as scikitlearn_app
+    from repo_builder import main
 
     c = choice.lower()
     if c.startswith("keras"):
-        keras_app()
+        main(URL="https://github.com/keras-team/keras", TARGET_DIR="keras")
     if c.startswith("pytorch"):
-        torch_app()
+        main("https://github.com/yunjey/pytorch-tutorial", "pytorch-tutorial")
     if c.startswith("algorithms"):
-        algorithms_app()
+        main("https://github.com/keon/algorithms", "algorithms")
     if c.startswith("scikit"):
-        scikitlearn_app()
-
-# keras_app()
-# torch_app()
-# algorithms_app()
+        main("https://github.com/scikit-learn/scikit-learn", "scikit-learn/sklearn")
