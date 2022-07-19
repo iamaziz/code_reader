@@ -47,4 +47,4 @@ if choice:
     if c.startswith("requests"):
         main("https://github.com/psf/requests", "requests")
     if c.startswith("transformers"):
-        main("https://github.com/huggingface/transformers", "transformers")
+        main("https://github.com/huggingface/transformers", "transformers", SPLIT_ON=1)
