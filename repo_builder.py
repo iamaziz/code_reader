@@ -13,7 +13,7 @@ def config(URL):
 						</style>
 						"""
     title = f"""
-	<sub>[source code](URL)</sub>
+	<sub>{URL}</sub>
 	"""
     header = hide_streamlit_style + title
     st.markdown(header, unsafe_allow_html=True)
