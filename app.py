@@ -28,7 +28,7 @@ st1, st2 = st.columns(2, gap="large")
 with st1:
     header()
 with st2:
-    CHOICES = ["", "Algorithms (CS fundamentals)", "Keras", "Transformers", "PyTorch Tutorial", "Scikit Learn", "Requests"]
+    CHOICES = ["Algorithms (CS fundamentals)", "Keras", "Transformers", "PyTorch Tutorial", "Scikit Learn", "Requests"]
     choice = st.selectbox(
         "Choose Repo To Read Source Code", CHOICES
     )
