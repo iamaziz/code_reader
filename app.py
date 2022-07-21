@@ -28,7 +28,8 @@ st1, st2 = st.columns(2, gap="large")
 with st1:
     header()
 with st2:
-    CHOICES = ["Algorithms (CS fundamentals)", "Keras", "Transformers", "PyTorch Tutorial", "Scikit Learn", "Requests"]
+    CHOICES = ["Algorithms (CS fundamentals)", "AIMA-Python", "Keras", "Transformers", "PyTorch Tutorial", "Lightning (PyTorch)",
+               "Scikit Learn", "Requests"]
     choice = st.selectbox(
         "Choose Repo To Read Source Code", CHOICES
     )
@@ -48,3 +49,7 @@ if choice:
         main("https://github.com/psf/requests", "requests", SPLIT_ON=1)
     if c.startswith("transformers"):
         main("https://github.com/huggingface/transformers", "transformers", 1)
+    if c.startswith("lightning"):
+        main("https://github.com/Lightning-AI/lightning", "lightning", 1)
+    if c.startswith("aima"):
+        main("https://github.com/aimacode/aima-python", "aima-python", 1)

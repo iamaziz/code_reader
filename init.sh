@@ -82,3 +82,20 @@ cd transformers
 git sparse-checkout set src/transformers examples
 
 cd ..
+
+# clone "Lightning" code
+git clone \
+  --depth 1  \
+  --filter=blob:none  \
+  --sparse \
+  https://github.com/Lightning-AI/lightning \
+;
+cd lightning
+git sparse-checkout set src/ examples
+
+cd ..
+
+# clone "AIMA-Python" code
+git clone https://github.com/aimacode/aima-python
+
+cd ..
