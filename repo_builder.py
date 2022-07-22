@@ -58,9 +58,9 @@ def main(URL, TARGET_DIR, SPLIT_ON: int = 2):
     if matched_files:
         for f in matched_files:
             render_file(f)
-        # config(URL)
         st.stop()
 
+    # rendering all files in st.tabs
     topics = sorted(set([n.split("/")[SPLIT_ON] for n in files]))
     tabs = st.tabs(topics)
     for tab, tab_name in zip(tabs, topics):

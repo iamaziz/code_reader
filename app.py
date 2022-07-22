@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Code Reader", page_icon="🧐", layout="wide")
 
 
 def _init_source_code_clone():
