@@ -1,14 +1,20 @@
 # Code Reader
 
-A Streamlit app for reading "Source Code" like reading a book. The [demo app is here](https://iamaziz-code-reader-app-wg55xz.streamlitapp.com/).
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://iamaziz-code-reader-app-wg55xz.streamlitapp.com/)
+
+A Streamlit app for reading "Source Code" like reading a book. 
+
+
 
 > WIP ...
 
 <br>
 
-**Getting Started and Local Development** <sub>tested on macOS with pip</sub>
+For local start and development
 
 ```shell
 $ ./setup.sh
 ```
+
+> <sub>tested on macOS with virtualenv and pip</sub>
 
