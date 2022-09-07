@@ -22,8 +22,8 @@ class App:
         title = """
         # _Code Reader_
         """
-        st.button(label="JSTC: Just Show The Code", help="Read source code like reading a book", disabled=True)
         st.markdown(title, unsafe_allow_html=True)
+        st.button(label="JSTC: Just Show The Code", help="Read source code like reading a book", disabled=True)
 
     def run(self):
         st1, st2 = st.columns(2, gap="large")
