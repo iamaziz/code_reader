@@ -21,9 +21,8 @@ class App:
     def header():
         title = """
         # _Code Reader_
-        **JSTC**: _**J**ust **S**how **T**he **C**ode_
-        <sup>_Read source code like reading a book_.</sup>
         """
+        st.button(label="JSTC: Just Show The Code", help="Read source code like reading a book", disabled=True)
         st.markdown(title, unsafe_allow_html=True)
 
     def run(self):
