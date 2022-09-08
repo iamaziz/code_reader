@@ -46,6 +46,7 @@ class App:
             "Lightning (PyTorch)",
             "Scikit Learn",
             "Requests",
+            "Annotated Deep Learning Paper Implementations",
         ]
 
     @staticmethod
@@ -69,6 +70,12 @@ class App:
             main("https://github.com/Lightning-AI/lightning", "lightning", 1)
         if c.startswith("aima"):
             main("https://github.com/aimacode/aima-python", "aima-python", 1)
+        if c.startswith("annotated"):
+            main(
+                "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
+                "annotated deep learning",
+                1,
+            )
 
 
 if __name__ == "__main__":

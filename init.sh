@@ -99,3 +99,15 @@ cd ..
 git clone https://github.com/aimacode/aima-python
 
 cd ..
+
+# clone "" code
+git clone \
+  --depth 1 \
+  --filter=blob:none \
+  --sparse \
+  https://github.com/labmlai/annotated_deep_learning_paper_implementations
+;
+cd annotated_deep_learning_paper_implementations
+git sparse-checkout set labmlai
+
+cd ..
