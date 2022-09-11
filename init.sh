@@ -1,15 +1,7 @@
 # https://stackoverflow.com/a/52269934/2839786
 
-#git clone \
-#  --depth 1  \
-#  --filter=blob:none  \
-#  --sparse \
-#  https://github.com/cirosantilli/test-git-partial-clone \
-#;
-#cd test-git-partial-clone
-#git sparse-checkout set d1
-#
-#cd ..
+# to update on restart
+rm -rf pytorch-tutorial scikit-learn algorithms keras __pycache__ requests transformers lightning aima-python annotated_deep_learning_paper_implementations/
 
 # clone "algorithms" code
 git clone \
