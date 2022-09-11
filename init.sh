@@ -105,7 +105,7 @@ git clone \
   --depth 1 \
   --filter=blob:none \
   --sparse \
-  https://github.com/labmlai/annotated_deep_learning_paper_implementations
+  https://github.com/labmlai/annotated_deep_learning_paper_implementations \
 ;
 cd annotated_deep_learning_paper_implementations
 git sparse-checkout set labml_nn
