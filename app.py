@@ -39,6 +39,7 @@ class App:
     def _available_repos(self):
         return [
             "Algorithms (CS fundamentals)",
+            "Annotated Deep Learning Paper Implementations",
             "AIMA-Python",
             "Keras",
             "Transformers",
@@ -46,7 +47,6 @@ class App:
             "Lightning (PyTorch)",
             "Scikit Learn",
             "Requests",
-            "Annotated Deep Learning Paper Implementations",
         ]
 
     @staticmethod
@@ -73,8 +73,8 @@ class App:
         if c.startswith("annotated"):
             main(
                 "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
-                "annotated deep learning",
-                1,
+                "annotated_deep_learning_paper_implementations",
+                2,
             )
 
 

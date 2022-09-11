@@ -98,7 +98,7 @@ cd ..
 # clone "AIMA-Python" code
 git clone https://github.com/aimacode/aima-python
 
-cd ..
+#cd ..
 
 # clone "" code
 git clone \
@@ -108,6 +108,6 @@ git clone \
   https://github.com/labmlai/annotated_deep_learning_paper_implementations
 ;
 cd annotated_deep_learning_paper_implementations
-git sparse-checkout set labmlai
+git sparse-checkout set labml_nn
 
 cd ..
